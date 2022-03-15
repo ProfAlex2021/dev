@@ -14,9 +14,9 @@ function exibirTabela(){
     let tabela = '';
     for(let linha in dados){
         tabela += '<tr>';
-        tabela += `<td>${dados[linha].processador}</td>`;
+        tabela += `<td>${dados[linha].PrOcEsSaDoR}</td>`;
         tabela += `<td>${dados[linha].usb}</td>`;
-        tabela += `<td>${dados[linha].atulizado ? "Sim" : "Não"}</td>`;
+        tabela += `<td>${dados[linha].atualizado === '1' ? "Sim" : "Não"}</td>`;
         tabela += `<td>${dados[linha].dataAtualizacao}</td>`;
         tabela += '</tr>';
     }
