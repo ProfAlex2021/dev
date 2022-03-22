@@ -5,7 +5,7 @@ var_dump($dados);
 
 include "Computador.php";
 
-explode($_POST);
+extract($_POST);
 
 $chkAtualizado = isset($_POST['chkAtualizado']);
 
