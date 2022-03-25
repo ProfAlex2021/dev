@@ -9,9 +9,16 @@ function carregarDados(funcao){
         });
 }
 
+function formatar(carro){
+    carro.ipvaPago = carro.ipvaPago === "1" ? "Sim" : "Não";
+    carro.ipvaData = new Intl.DateTimeFormat('pt-BR').format(new Date(carro.ipvaData));
+    carro.ipvaValor = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(carro.ipvaValor);
+}
+
 function exibirTabela(){
     let tabela = '';
     dados.forEach(carro => {
+        formatar(carro);
         tabela += '<tr>';
         tabela += `<td>${carro.placa}</td>`;
         tabela += `<td>${carro.ano}</td>`;
